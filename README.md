@@ -5,9 +5,20 @@
 Напишіть SQL команду, за допомогою якої можна
 
 * вибрати всі стовпчики (За допомогою wildcard `*`) з таблиці _products_;
-* вибрати тільки стовпчики _name_, _phone_ з _таблиці_ shippers,
+* вибрати тільки стовпчики _name_, _phone_ з таблиці _shippers_,
 
 та перевірте правильність її виконання в MySQL Workbench.
+
+### Відповідь
+
+```sql
+SELECT * FROM `mydb`.`products`;
+SELECT `name`, `phone` FROM `mydb`.`shippers`;
+```
+
+![select *](img/1-1.png)
+
+![alt text](img/1-2.png)
 
 ## 2
 
