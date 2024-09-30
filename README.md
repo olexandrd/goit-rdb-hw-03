@@ -19,6 +19,7 @@ SELECT `name`, `phone` FROM `mydb`.`shippers`;
 ---
 ![select *](img/1-1.png)
 
+---
 ![SELECT `name`, `phone`](img/1-2.png)
 
 ## 2
@@ -35,7 +36,11 @@ SELECT MIN(`price`) FROM `mydb`.`products`;
 
 ---
 ![avg price](img/2-1.png)
+
+---
 ![max price](img/2-2.png)
+
+---
 ![min price](img/2-3.png)
 
 ## 3
@@ -57,6 +62,33 @@ SELECT DISTINCT `category_id`, `price` FROM `mydb`.`products` ORDER BY `price` D
 
 Напишіть SQL команду, за допомогою якої можна знайти кількість продуктів (рядків), які знаходиться в цінових межах від 20 до 100, та перевірте правильність її виконання в MySQL Workbench.
 
+### Відповідь 4
+
+```sql
+SELECT COUNT(*) FROM `mydb`.`products` WHERE `price` BETWEEN 20 AND 100;
+-- or
+SELECT COUNT(*) FROM `mydb`.`products` WHERE `price` >= 20 AND `price` <= 100;
+```
+
+---
+![count price between 20 and 100](img/4-1.png)
+
 ## 5
 
 Напишіть SQL команду, за допомогою якої можна знайти кількість продуктів (рядків) та середню ціну (_price_) у кожного постачальника (_supplier_id_), та перевірте правильність її виконання в MySQL Workbench.
+
+### Відповідь 5
+
+```sql
+SELECT
+ `supplier_id`,
+ COUNT(*),
+ AVG(`price`)
+FROM
+ `mydb`.`products`
+GROUP BY
+ `supplier_id`;
+```
+
+---
+![count price by supplier_id](img/5-1.png)
